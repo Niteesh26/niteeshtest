@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+
+<meta charset="utf-8" />
+
+<title>
+homepage
+</title>
+
+<head>
+
+	<style>
+		canvas{ background-color: #c0c0c0;}
+		/* Style the tab */
+		.greenButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.play{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.pause{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.container {
+  display: flex;
+}
+.container.space-around {
+  justify-content: space-around;
+}
+
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    color: blue;
+    
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 0px;
+    border-top: none;
+}
+	</style>
+			<!-- Latest compiled and minified CSS -->
+			<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+			<link rel="stylesheet" type="text/css" href="styles.css" >
+			 Optional theme 
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+			
+<link rel="stylesheet" type="text/css" href="styles.css" >
+			 Latest compiled and minified JavaScript 
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
+			
+</head>
+
+
+
+<body>
+
+<!-- START OF PAGE LINKS AND TABS -->
+
+<!--
+<a href="page1.html">page1</a>
+<div>
+ <form>
+<input type="button" value="Page1" onclick="window.location.href='page1.html'" />
+</form> 
+
+ <form>
+<input type="button" value="Page2" onclick="window.location.href='page2.html'" />
+</form> 
+</div>
+<center>
+<br>
+-->
+
+<!-- END OF PAGE LINKS AND TABS -->
+
+<br>
+
+<br>
+
+ <div class="tab">
+ <div class="container space-around">
+  <div class="tab-button"><button class="tablinks" onclick="openCity(event, 'Trending')">Trending</button></div>
+
+  <div class="tab-button"><button class="tablinks" onclick="openCity(event, 'Home')" id="defaultOpen">Home</button></div>
+ 
+ <div class="tab-button"> <button class="tablinks" onclick="openCity(event, 'My Games')">My Games</button></div>
+  </div>
+</div>
+
+<div id="Home" class="tabcontent">
+<br>
+<center>
+  <!-- START OF GAME 01 CANVAS -->
+
+<div id="Game01">
+
+	<button class="greenButton" onclick="PlayGame01()" id="PlayGame01-button" value="1">Play Game</button>
+	<button class="greenButton" onclick="StopGame01()" id="StopGame01-button" value="0">Stop Game</button>
+	
+
+	<video width=0 height=0 id="Game01-video" controls>
+		<source src="sample01.mp4" type="video/mp4">
+		</source>
+	</video>
+
+	<div id='media-controls'>
+	   <button id='play-pause-button' class='play' title='play' onclick='togglePlayPause();'>Play Video</button>
+	</div>
+
+	<canvas id="Game01-canvas" width=480 height=320></canvas>
+
+</div>
+
+
+<!-- END OF GAME 01 CANVAS -->
+</center>
+</div>
+
+<div id="Trending" class="tabcontent">
+<center>
+
+
+
+<br>
+
+<!-- START OF GAME 02 CANVAS -->
+
+<div id="Game02">
+
+	<button class="greenButton" onclick="PlayGame02()" id="PlayGame02-button" value="1">Play Game</button>
+	<button class="greenButton" onclick="StopGame02()" id="StopGame02-button" value="0">Stop Game</button>
+	
+
+	<video width=0 height=0 id="Game02-video" controls>
+		<source src="sample01.mp4" type="video/mp4">
+		</source>
+	</video>
+
+	<div id='media-controls'>
+	   <button id='play-pause-button' class='play' title='play' onclick='togglePlayPause();'>Play Video</button>
+	</div>
+
+	<canvas id="Game02-canvas" width=480 height=320></canvas>
+
+</div>
+
+<!-- END OF GAME 02 CANVAS -->
+
+
+
+</center>
+</div>
+
+<div id="My Games" class="tabcontent">
+  <h3>My Games</h3>
+  <p>Downloaded Games will be displayed here.</p>
+</div>
+
+<script type="text/javascript">
+
+document.getElementById("defaultOpen").click();
+	function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+
+
+
+
+
+<script>
+
+
+    document.getElementById('Game01-video').addEventListener('ended',myHandler,false);
+    function myHandler(e) {
+        
+			PlayGame01();
+    }
+	
+	var canvas = document.getElementById('Game01-canvas');
+	var ctx = canvas.getContext('2d');
+	var video = document.getElementById('Game01-video');
+	var mediaPlayer;
+
+	document.addEventListener("DOMContentLoaded", function() { initialiseMediaPlayer(); }, false);
+
+	// set canvas size = video size when known
+	video.addEventListener('loadedmetadata', function() {
+	  //canvas.width = video.videoWidth;
+	  //canvas.height = video.videoHeight;
+		canvas.width = 480;
+		canvas.height = 320;
+	});
+
+	video.addEventListener('play', function() {
+	  var $this = this; //cache
+	  (function loop() {
+	    if (!$this.paused && !$this.ended) {
+	      ctx.drawImage($this, 0, 0);
+	      setTimeout(loop, 1000 / 30); // drawing at 30fps
+	    }
+	  })();
+	}, 0);
+		
+	function PlayGame01() {
+
+		var canvas=document.getElementById("Game01-canvas");
+		var ctx=canvas.getContext("2d");
+		var x=canvas.width/2;
+		var y=canvas.height-30;
+		var dx=2;
+		var dy=-2;
+		var ballRadius=10;
+		var paddleHeight=10;
+		var paddleWidth=75;
+		var paddleX=(canvas.width-paddleWidth)/2;
+		var rightPressed=false;
+		var leftPressed=false;
+
+		var brickRowCount = 3;
+		var brickColumnCount = 5;
+		var brickWidth = 75;
+		var brickHeight = 20;
+		var brickPadding = 10;
+		var brickOffsetTop = 30;
+		var brickOffsetLeft = 30;
+		var bricks=[];
+		var score=0;
+		var lives=3;
+
+		document.addEventListener("keydown",keyDownHandler,false);
+		document.addEventListener("keyup",keyUpHandler,false);
+		document.addEventListener("mousemove",mouseMoveHandler,false);
+
+
+		for(c=0;c<brickColumnCount;c++)
+		{
+			bricks[c]=[];
+			for(r=0;r<brickRowCount;r++)
+			{
+				bricks[c][r]={ x:0, y:0, status:1};
+			}
+		}
+
+		function mouseMoveHandler(e)
+		{
+			var relativeX=e.clientX-brickOffsetLeft;
+			if(relativeX>0 && relativeX<canvas.width)
+			{
+				paddleX=relativeX-paddleWidth/2;
+			}
+		}
+
+		function keyDownHandler(e)
+		{
+			if(e.keyCode==39)
+			{ 
+				rightPressed=true;
+			}
+			else if(e.keyCode==37) 
+			{
+				leftPressed=true;
+			}
+			else if(e.keyCode==38)
+			{
+				downPressed=true;
+			}
+		}
+
+		function keyUpHandler(e)
+		{
+			if(e.keyCode==39)
+			{ 
+				rightPressed=false;
+			}
+			else if(e.keyCode==37)
+			{ 
+				leftPressed=false;
+			}
+			else if(e.keyCode==38)
+			{
+				downPressed=false;
+			}
+		}
+
+		function drawBall()
+		{
+
+			ctx.beginPath();
+			ctx.arc(x,y,ballRadius,0,Math.PI*2,false);
+			ctx.fillStyle="#ff0000";
+			ctx.fill();
+			ctx.closePath();
+
+		}
+
+		function drawPaddle()
+		{
+			ctx.beginPath();
+			ctx.rect(paddleX,canvas.height-paddleHeight,paddleWidth,paddleHeight);
+			ctx.fillStyle="#0095DD";
+			ctx.fill();
+			ctx.closePath();
+		}
+
+		function drawBricks()
+		{
+			for(c=0;c<brickColumnCount;c++)
+				for(r=0;r<brickRowCount;r++)
+				{
+					if(bricks[c][r].status==1)
+					{
+						var brickX=c*(brickWidth + brickPadding) + brickOffsetLeft;
+						var brickY=r*(brickHeight + brickPadding) + brickOffsetTop;
+						bricks[c][r].x=brickX;
+						bricks[c][r].y=brickY;
+						ctx.beginPath();
+						ctx.rect(brickX,brickY,brickWidth,brickHeight);
+						ctx.fillStyle="#0095DD";
+						ctx.fill();
+						ctx.closePath();
+					}
+				}
+		}
+
+		function collisionDetection()
+		{
+			for(c=0;c<brickColumnCount;c++)
+			{
+				for(r=0;r<brickRowCount;r++)
+				{
+					var b=bricks[c][r];
+					if(b.status==1)
+					{
+						if(x>b.x && x<b.x + brickWidth && y>b.y && y<b.y + brickHeight)
+						{
+							dy=-dy;
+							b.status=0;
+							score++;
+							if(score == brickRowCount*brickColumnCount) 
+							{
+					                        alert("YOU WIN, CONGRATULATIONS!");
+					                        document.location.reload();
+		                    			}
+						}
+					}
+				}
+			}
+		}
+
+		function drawScore()
+		{
+			ctx.font="16px Arial";
+			ctx.fillStyle="#0095DD";
+			ctx.fillText("Score: "+score,8,20);
+		}
+
+		function drawLives() 
+		{
+		    ctx.font = "16px Arial";
+		    ctx.fillStyle = "#0095DD";
+		    ctx.fillText("Lives: "+lives, canvas.width-65, 20);
+		}
+
+		function DrawGame01()
+		{
+			ctx.clearRect(0,0,canvas.width,canvas.height);
+			drawBricks();
+			drawBall();
+			drawPaddle();
+			drawScore();
+			drawLives();
+			collisionDetection();
+			
+
+
+
+
+			if(x+dx<ballRadius || x+dx>canvas.width-ballRadius)
+			{
+				dx=-dx;
+			}
+			if(y+dy<ballRadius)
+			{
+				dy=-dy;
+			}
+			else if(y+dy>canvas.height-ballRadius)
+			{
+				if(x>paddleX && x<paddleX + paddleWidth)
+				{
+					dy=-dy;
+				}
+				else
+				{
+					lives--;
+					if(!lives) 
+					{
+						alert("GAME OVER");
+						document.location.reload();
+					}
+					else 
+					{
+						x = canvas.width/2;
+						y = canvas.height-30;
+						dx = 2;
+						dy = -2;
+						paddleX = (canvas.width-paddleWidth)/2;
+					}
+				}
+			}
+
+			if(rightPressed && paddleX<canvas.width-paddleWidth)
+			{
+				paddleX+=7;
+			}
+			else if(leftPressed && paddleX>0)
+			{
+				paddleX-=7;
+			}
+			x+=dx;
+			y+=dy;
+			requestAnimationFrame(DrawGame01);
+			
+		}
+		DrawGame01();
+		
+
+	}
+
+
+	function StopGame01()
+	{
+		document.location.reload();	
+	}
+		
+	function initialiseMediaPlayer() 
+	{
+	   	mediaPlayer = document.getElementById('Game01-video');
+	   	mediaPlayer.controls = false;
+	}
+
+	function togglePlayPause() 
+	{
+		var btn = document.getElementById('play-pause-button');
+		if (mediaPlayer.paused || mediaPlayer.ended) 
+		{
+			btn.title = 'pause';
+			btn.innerHTML = 'Pause Video';
+			btn.className = 'pause';
+			mediaPlayer.play();
+		}
+		else 
+		{
+			btn.title = 'play';
+			btn.innerHTML = 'Play Video';
+			btn.className = 'play';
+			mediaPlayer.pause();
+		}
+	}
+	
+	function changeButtonType(btn, value) {
+	   btn.title = value;
+	   btn.innerHTML = value;
+	   btn.className = value;
+	}
+	
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
